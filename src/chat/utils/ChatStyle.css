@@ -1,0 +1,178 @@
+:root{
+    --theme-dark : rgb(50,52,54);
+    --theme-darker: rgb(36,37,38);
+}
+body{
+    overflow: hidden !important;
+}
+/* ALL CAN ACCESS */
+.theme-dark{
+    background-color: var(--theme-dark);
+}
+.theme-darker{
+    background-color: var(--theme-darker);
+}
+.content-body{
+    box-shadow: 1px 0px 10px 10px rgba(20, 20, 20, 0.267);
+
+}
+.NavBar .icon:hover{
+    cursor: pointer;
+    scale: 1.05;
+    color: rgb(2 229 255) !important;
+    outline: none;
+}
+
+.icon{
+    cursor: pointer;
+    scale: 1.05;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* USERBOX CSS */
+textarea{
+    font-size: 15px !important;
+}
+.send{
+    height: clamp(30px,2vw,40px);
+    width: clamp(30px,2vw,40px);
+    margin: auto;
+}
+.UserBox-Loading{
+    animation: USER_BOX_LOADING 1.5s ease-in-out infinite;
+}
+
+
+
+/* DIALOGUE BOX CSS */
+.bot-icon{
+    height: clamp(40px,3vw,45px);
+    width: clamp(40px,3vw,45px);
+    border-radius: 100%;
+}
+.chat-container .chat-message:last-child{
+    margin-bottom: 22vh;
+}
+/* .pulsating-outline{
+    animation: pulsating-outline 3s ease-in-out infinite;
+} */
+
+/* NAVBAR CSS */
+.NavBar{
+    border-radius: 10px 10px 0px 0px;
+}
+.NavBar svg{
+    width: 25px;
+    height: 25px;
+}
+
+
+/* OPTION DIALOGUE CSS */
+/* .OptionScrollView:hover{
+    height: auto !important;
+    background-color: rgba( 0, 0, 0 ,0.2) !important;
+} */
+.OptionGroup{
+    height: auto;
+    width: max-content;
+    align-items: start;
+}
+.drop{
+    /* overflow: hidden; */
+    -webkit-animation: COLLAPSE_ANIM 0.5s ease-in-out 0.5s forwards;
+    animation:COLLAPSE_ANIM 0.5s ease-in-out 0.5s forwards  ;
+}
+.option{
+    color: white;
+    font-size: 12px;
+    background-color: var(--theme-darker);
+    height: auto;
+    width: 33%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: rgb(172,172,172);
+}
+.option:hover{
+    cursor: pointer;
+    background-color: rgb(60, 62, 63);
+    box-shadow: 1px 1px 5px 2px rgba(20, 20, 20, 0.219);
+}
+.re-collapse{
+    animation: RE_COLLAPSE 1s ease-in-out forwards;
+}
+@keyframes POP-RIGHT{
+    0%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50%{
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+    }
+    100%{
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes USER_BOX_LOADING{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes loading_idle{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes DRAW_UP{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 2.5rem;
+    }
+}
+@keyframes DRAW_DOWN{
+    0%{
+        height: 2.5rem;
+    }
+    100%{
+        height: 0;
+    }
+}
+@keyframes FADE_OUT{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity:0;
+    }
+}
+/* @keyframes pulsating-outline{
+    0%{
+        outline-offset: 10px;
+        outline-color: white;
+    }
+    50%{
+        outline-offset: 1px;
+        outline-color: rgb(2 229 255);
+    }
+    100%{
+        outline-offset: 10px;
+        outline-color: white;
+
+    }
+} */
