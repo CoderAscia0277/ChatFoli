@@ -103,8 +103,8 @@ const ChatIndex = () =>{
     const FetchData =  async (UserMessage) =>{
 
         try{
-            // const BotMessage = await GoogleAi(UserMessage);
-            const BotMessage = 'testing';
+            const BotMessage = await GoogleAi(UserMessage);
+            // const BotMessage = 'testing';
             //APPEND NEW BOT DIALOGUE
             setTimeout(()=>{
                 Store.dispatch(update_onBusy(false));
