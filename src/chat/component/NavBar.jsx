@@ -2,11 +2,11 @@ import React from "react";
 import { Tooltip } from 'react-tooltip';
 const NavBar = () =>{
     const download_resume = () => {
-        const fileUrl = "images/Foli.png";
+        const fileUrl = "resume/John Lenard-Besa-Resume.pdf";
         // Create a temporary anchor element
         const tempAnchor = document.createElement("a");
         tempAnchor.href = fileUrl;
-        tempAnchor.download = "Foli.png"; // Specify the file name here
+        tempAnchor.download = "John Lenard-Besa-Resume.pdf"; // Specify the file name here
         document.body.appendChild(tempAnchor);
         tempAnchor.click();
         document.body.removeChild(tempAnchor);

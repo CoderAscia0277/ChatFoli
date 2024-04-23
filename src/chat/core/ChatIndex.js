@@ -118,7 +118,7 @@ const ChatIndex = () =>{
                 <NavBar/>
                 <div id='ScrollView'  style={{overflowY:'auto',scrollBehavior:'smooth',height:'95%'}}>
                     <div  className='chat-container d-flex flex-column theme-dark col-12 gap-4' style={{height:'max-content'}}>   
-                        <IntroPanel height='45vh'/>
+                        <IntroPanel />
                         <DialogueBox value=' Good Day! My name is Foli, I am here to answer your queries about John Lenard Besa. Is there anything you want to know about him? His interest, education, or perhaps his future goals?' name='Foli'/>
                         
                         {dialogue ? dialogue.map((item) => {return(item);}) : ''}
