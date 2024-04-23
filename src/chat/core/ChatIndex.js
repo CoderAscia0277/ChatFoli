@@ -3,6 +3,7 @@ import NavBar from '../component/NavBar';
 import UserBox from '../component/UserBox';
 import DialogueBox from '../component/DialogueBox';
 import IntroPanel from '../component/IntroPanel';
+import AuthenticationPanel from '../component/AuthenticationPanel';
 import { useState,useRef, useEffect } from 'react';
 import Store from '../utils/ConfigureStore';
 import { update_onBusy} from '../utils/ConfigureStore';
@@ -60,15 +61,19 @@ const GoogleAi = async (msg) =>{
 const ChatIndex = () =>{
 
     let didMountRef = useRef(false);
-    
+    const [store,setStore] = useState(Store.getState());
+    Store.subscribe(()=>setStore(Store.getState()));
+
     useEffect(()=>{
-        const ScrollView = document.querySelector('#ScrollView');
-        if(didMountRef.current){
-            ScrollView.scrollTop = 10000;
-        }else{
-            didMountRef.current = true;
-            ScrollView.scrollTop = 10000;
-     
+        if(store.isAutheticated){
+            const ScrollView = document.querySelector('#ScrollView');
+            if(didMountRef.current){
+                ScrollView.scrollTop = 10000;
+            }else{
+                didMountRef.current = true;
+                ScrollView.scrollTop = 10000;
+         
+            }
         }
     });
 
@@ -110,10 +115,10 @@ const ChatIndex = () =>{
         }
         
     }
-    // url(images/samuel-scalzo-xyuYk9oLA8I-unsplash.jpg) center/cover no-repeat'
+
     return(
+        store.isAutheticated ? 
         <div className='theme-dark'  style={{width:'100vw',height:'100vh',minWidth:'320px'}}>
-             
             <div className='d-flex flex-column col-lg-4 col-md-8 col-sm-10 col-12 content-body ' style={{margin:'auto',borderRadius:'15px',height:'100%'}}>
                 <NavBar/>
                 <div id='ScrollView'  style={{overflowY:'auto',scrollBehavior:'smooth',height:'95%'}}>
@@ -131,6 +136,7 @@ const ChatIndex = () =>{
             
             
         </div>
+        : <AuthenticationPanel/>
     );
 }
 

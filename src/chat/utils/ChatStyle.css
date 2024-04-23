@@ -104,6 +104,12 @@ textarea{
 .re-collapse{
     animation: RE_COLLAPSE 1s ease-in-out forwards;
 }
+
+/* Authetication style */
+.submit_btn:hover{
+    scale: 1.10;
+    cursor: pointer;
+}
 @keyframes POP-RIGHT{
     0%{
         -webkit-transform: translateX(0);
