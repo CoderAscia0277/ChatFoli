@@ -28,7 +28,7 @@ const DialogueBox = ({name='None',value='None'}) => {
     return(
         <div id='row' className="chat-message col-12 d-flex flex-row px-3 gap-2" style={{height:'max-content',minHeight:'70px'}}>
             <div className="col-1 ">
-                <div className='bot-icon m-auto' style={{background:name ===  'Foli' ? 'url(images/Foli.png) center/cover' : 'url(images/UserIcon.svg) center/cover'}}></div>
+                <div className='bot-icon m-auto' style={{background:name ===  'Foli' ? 'url(images/Foli.png) center/cover' : 'url(images/UserIcon.png) center/cover'}}></div>
             </div>
             <div className="col-11 px-3 d-flex flex-column mb-1">
                 <div className=" col-12  d-flex flex-row " style={{color: name ==='Foli' ? 'rgb(2 229 255)' : 'rgb(255 255 255)',fontSize:'18px',fontWeight:'bold'}}>

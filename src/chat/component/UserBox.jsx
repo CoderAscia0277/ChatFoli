@@ -80,7 +80,7 @@ const UserBox = ({onSubmit}) => {
          
             
         } 
-        else if (text.length >= 250) {
+        else if (text.length >= 35) {
             alert("You have reached the maximum text count. Your text won't be submitted.");
             setFill(false);
             target.value = '';
