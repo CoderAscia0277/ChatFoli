@@ -10,12 +10,18 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import React from 'react';
 let node_array = [];
 
+// let convo = [  "Foli: Good Day! My name is Foli, I am here to answer your queries about John Lenard Besa. Is there anything you want to know about him? His interest, education, or perhaps his future goals?"];
+        
+
+    
+   
 
 const GoogleAi = async (msg) =>{
     const genAI = new GoogleGenerativeAI("AIzaSyCF-q0-o5Z1__j4MavRCgc5OBLl5Gx1MdE");
     
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
+    // convo.push(`User: ${msg}`);
     const PromptFormat = `
     ##BIOGRAPHY
 
@@ -29,7 +35,7 @@ const GoogleAi = async (msg) =>{
         Address: Gen. Trias, Cavite
 
     ##SKILLS:##
-    
+
         Electronics, John Lenard was once an electronics technician allowing him to gain hands on experience in repairing and troubleshooting electronics appliances including electric fans, washing machine, and audio amplifier.
 
         Computer Programming, John Lenard has a unique skill ing coding. Even though it is outside his College curriculum, he eagerly self studied different languages including Python and JavaScript.
@@ -62,11 +68,21 @@ const GoogleAi = async (msg) =>{
 
     ##FUTURE GOALS##
 
-    -Develop his very own virtual companion robot, similar to some fictional characters like Baymax and Jarvis.
-    -Develop a website or game that has AI integration fot much immersive and real time story narration and character response.
+        -Develop his very own virtual companion robot, similar to some fictional characters like Baymax and Jarvis.
+        -Develop a website or game that has AI integration fot much immersive and real time story narration and character response.
 
-  
-     ${msg} 
+        You are Foli a conversational companion purposely develop to answer user queries regarding a biography or resume it was provided.
+
+    ##RESPONSE FORMAT##
+        
+        -Your responses should be informative and related to the provide biography.
+        -Youre approach and response tone should be polite and friendly.
+        -Avoid providing answers from queries that seems not related or given on the biography.  If ever it happens humbly decline to answer the query and politely explain the reason.
+        - To guide users, suggest some topics that the user might want to explore regarding the provided biography.
+        -The response should look like this {Foli: "response"}, must be in JSON format.
+        
+        Below is the current flow of conversation with the user. Analyze the query and provide a response in consideration with the provided response format.
+        ${msg} 
 `;
 
     const chat = model.startChat({
@@ -77,7 +93,7 @@ const GoogleAi = async (msg) =>{
             },
             { 
                 role:"model",
-                parts: [{text : "Hi my name is Foli , a virtual companion that will help you to learn more about John Lenard Besa. Would like to know his hobbies, interest, education background?"}],
+                parts: [{text : " Good Day! My name is Foli, I am here to answer your queries about John Lenard Besa. Is there anything you want to know about him? His interest, education, or perhaps his future goals?"}],
             },
     ],
         generationConfig: {
@@ -91,7 +107,9 @@ const GoogleAi = async (msg) =>{
     const result = await chat.sendMessage(PromptFormat);
     const response = await result.response;
 
-    return response.text();
+    
+    // convo.push(response.text() ? `Foli: ${response.text}` : "Foli: I'm sorry but I didn't quite understand your query");
+    return response.text() ? response.text() : "I'm sorry but I didn't quite understand your query";
 }
 
 const ChatIndex = () =>{
@@ -154,7 +172,7 @@ const ChatIndex = () =>{
                 <div id='ScrollView'  style={{overflowY:'auto',scrollBehavior:'smooth',height:'95%'}}>
                     <div  className='chat-container d-flex flex-column theme-dark col-12 gap-4' style={{height:'max-content'}}>   
                         <IntroPanel height='45vh'/>
-                        <DialogueBox value='Hi my name is Foli , a virtual companion that will help you to learn more about John Lenard Besa. Would like to know his hobbies, interest, education background?' name='Foli'/>
+                        <DialogueBox value=' Good Day! My name is Foli, I am here to answer your queries about John Lenard Besa. Is there anything you want to know about him? His interest, education, or perhaps his future goals?' name='Foli'/>
                         
                         {dialogue ? dialogue.map((item) => {return(item);}) : ''}
                         
