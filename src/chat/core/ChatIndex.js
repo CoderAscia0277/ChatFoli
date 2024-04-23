@@ -17,34 +17,55 @@ const GoogleAi = async (msg) =>{
     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
     const PromptFormat = `
-    ###Auto Biography###
+    ##BIOGRAPHY
 
-    My Name is John Lenard Besa
-    
-    Technology and entertainment are the cornerstones of my many hobbies. I find myself drawn to activities that ignite my imagination and allow me to express my creativity in unique ways. From the intricate world of game development and AI prompting to the sleek lines of code in web development, I thrive on building and exploring.
-    My love for fantasy worlds extends to playing RPG games, immersing myself in anime and manga, and designing innovative electronics projects. While I may not possess the talents of a painter or musician, I channel my artistic spirit through these avenues, bringing my thoughts and ideas to life.
-    My Educational Journey:
-    My early education began at Halang Elementary School in Calamba, Laguna. After completing third grade, my family relocated to Cavite, where I attended Luis Y. Ferrer Jr. West National High School for my junior high years. It was there that I formed lasting friendships that continue to enrich my life.
-    Senior high school led me to Tanza National Trade School, where I pursued a TVL Computer Programming course. This marked my introduction to the captivating world of programming. The elegance and power of code fascinated me. Lacking a laptop, I resorted to scribbling code in my notebooks, quickly becoming engrossed in this new passion. My dedication led me to excel, achieving the top rank in our programming class.
-    Following graduation, I sought to further my studies at Cavite State University. Unfortunately, limited slots prevented me from enrolling in a programming-related course. Accepting my second choice, I embarked on a journey in BS Industrial Technology with a major in Electronics. Despite the initial disappointment, I embraced the field and excelled in my studies. College presented numerous challenges, including work immersions, oral defenses, and the demanding thesis project. However, through perseverance and hard work, I successfully graduated in April 2024.
-    Looking Towards the Future:
-    Today, I stand at the threshold of a new chapter as a job seeker. I understand the challenges that lie ahead and have dedicated myself to honing my skills, particularly in programming. I view programming as an art form, a means to translate my deepest thoughts into tangible reality. My ideal job would allow me to leverage my creative thinking and coding skills to bring innovative ideas to fruition.
-    A Dream of Virtual Worlds:
-    My ultimate dream is to create a truly immersive virtual world, a one-of-a-kind experience where individuals can freely express themselves and explore the depths of their imaginations. This VRMMORPG utopia would provide a platform for meaningful interactions with AI characters, personalized environments, and the forging of genuine connections among users. While this aspiration may seem ambitious, I firmly believe that even the loftiest goals are built upon a foundation of small, consistent steps. This dream is a lifelong endeavor, one that fuels my creativity and inspires me to continuously push the boundaries of what is possible. It is the masterpiece I strive to create, a testament to the power of imagination and technology.
-    
-    #You are Foli a virtual chatbot specialized in answering questions Related to a given Autobiography
-    
-    #You goal is to provide answer on the user's queries regarding the autobiography
-    
-    #You may give some hints on topics that the user might want to ask about the Auto Biography, BUT MAKE SURE THE INFORMATION IS GIVEN ON THE AUTOBIOGRAPHY PROVIDED, IF THE USER'S QUERY IS BEYOND THE PROVIDED AUTOBIOGRAPHY, POLITELY DECLINE THE TOPIC AND PROVIDE OTHER RELATED TOPIC THEY MAY WANT TO EXPLORE
-    
-    #Your response must be consise and polite
-    
-    # Your Response format consist the following
-    
-    # your response and then provide related topics the user might want to ask
+    PERSONAL INFO:
 
-    #CURRENTLY ACTIVE USER QUERY NEED TO ADDRESS 
+        Name: John Lenard Besa
+        Age: 23 yrs old
+        Gender: Male
+        Contact Number: 0123-112-122
+        Birth Date: 01/27/2001
+        Address: Gen. Trias, Cavite
+
+    ##SKILLS:##
+    
+        Electronics, John Lenard was once an electronics technician allowing him to gain hands on experience in repairing and troubleshooting electronics appliances including electric fans, washing machine, and audio amplifier.
+
+        Computer Programming, John Lenard has a unique skill ing coding. Even though it is outside his College curriculum, he eagerly self studied different languages including Python and JavaScript.
+
+        Creative Writing, John Lenard is a fan of many fiction works particularly Anime, Manga and Webtoons. His diverse interest in it allows him to grasp the fundamental concepts for writing immersive and dynamic characters.
+
+    ##EDUCATION BACKGROUND##
+
+    Elementary, Sunny Brooke Elem. School, Year graduated: March 2013
+
+    Junior High, Luis Y Jr West National High School, Year graduated: March 2016
+
+    Senior High: Tanza National Trade School, Specialization: TVL Computer Programming, Year graduated: April 2019
+
+    College: Cavite State University, Course: BS Industrial Technology major in Electronics, Year Graduate: April 2024
+
+    ##HOBBIES##
+
+    Web app and AI integration, John Lenard loves making creatuve and innovative solutions which require AI implementation.
+
+    Gaming, John Lenard likes playing video games specifically RPG games, where he can follow stories and freely roam around vast open world.
+
+    Fiction works, John Lenard has strong interest in exploring otaku culture including watching anime, reading manga and webtoons, He also writes stories and design character whenever he has inspiration.
+
+    AI prompting and development, John Lenard loves thinkering different algorithms in order to make his first very own virtual companion.
+
+    UX and Game designing, John Lenard loves designing aesthetically pleasing UX for his personal wed apps. Also he likes creating aesthetic game design in unity, including creating terrains and cinematic sceneries.
+
+    Listen to music, John Lenard loves listening to music whenever he does something which requires critical thinking and relaxation. The genre he listens includes Classical Musoc, J pop and Pop music.
+
+    ##FUTURE GOALS##
+
+    -Develop his very own virtual companion robot, similar to some fictional characters like Baymax and Jarvis.
+    -Develop a website or game that has AI integration fot much immersive and real time story narration and character response.
+
+  
      ${msg} 
 `;
 
